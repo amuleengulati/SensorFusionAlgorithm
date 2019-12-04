@@ -1,0 +1,92 @@
+absdev.lo: absdev.c ../config.h /usr/include/math.h \
+ /usr/include/sys/reent.h /usr/include/_ansi.h /usr/include/newlib.h \
+ /usr/include/_newlib_version.h /usr/include/sys/config.h \
+ /usr/include/machine/ieeefp.h /usr/include/sys/features.h \
+ /usr/include/cygwin/config.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/stddef.h \
+ /usr/include/sys/_types.h /usr/include/machine/_types.h \
+ /usr/include/machine/_default_types.h /usr/include/sys/lock.h \
+ /usr/include/sys/cdefs.h /usr/include/_ansi.h ../gsl/gsl_statistics.h \
+ ../gsl/gsl_statistics_long_double.h /usr/include/stdlib.h \
+ /usr/include/machine/stdlib.h /usr/include/alloca.h \
+ /usr/include/cygwin/stdlib.h /usr/include/cygwin/wait.h \
+ ../gsl/gsl_statistics_double.h ../gsl/gsl_statistics_float.h \
+ ../gsl/gsl_statistics_ulong.h ../gsl/gsl_statistics_long.h \
+ ../gsl/gsl_statistics_uint.h ../gsl/gsl_statistics_int.h \
+ ../gsl/gsl_statistics_ushort.h ../gsl/gsl_statistics_short.h \
+ ../gsl/gsl_statistics_uchar.h ../gsl/gsl_statistics_char.h \
+ ../templates_on.h absdev_source.c ../templates_off.h
+
+../config.h:
+
+/usr/include/math.h:
+
+/usr/include/sys/reent.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/newlib.h:
+
+/usr/include/_newlib_version.h:
+
+/usr/include/sys/config.h:
+
+/usr/include/machine/ieeefp.h:
+
+/usr/include/sys/features.h:
+
+/usr/include/cygwin/config.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/stddef.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/machine/_default_types.h:
+
+/usr/include/sys/lock.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/_ansi.h:
+
+../gsl/gsl_statistics.h:
+
+../gsl/gsl_statistics_long_double.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/machine/stdlib.h:
+
+/usr/include/alloca.h:
+
+/usr/include/cygwin/stdlib.h:
+
+/usr/include/cygwin/wait.h:
+
+../gsl/gsl_statistics_double.h:
+
+../gsl/gsl_statistics_float.h:
+
+../gsl/gsl_statistics_ulong.h:
+
+../gsl/gsl_statistics_long.h:
+
+../gsl/gsl_statistics_uint.h:
+
+../gsl/gsl_statistics_int.h:
+
+../gsl/gsl_statistics_ushort.h:
+
+../gsl/gsl_statistics_short.h:
+
+../gsl/gsl_statistics_uchar.h:
+
+../gsl/gsl_statistics_char.h:
+
+../templates_on.h:
+
+absdev_source.c:
+
+../templates_off.h:

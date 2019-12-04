@@ -1,0 +1,258 @@
+fft.lo: fft.c ../config.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/stddef.h \
+ /usr/include/stdlib.h /usr/include/machine/ieeefp.h /usr/include/_ansi.h \
+ /usr/include/newlib.h /usr/include/_newlib_version.h \
+ /usr/include/sys/config.h /usr/include/sys/features.h \
+ /usr/include/cygwin/config.h /usr/include/sys/reent.h \
+ /usr/include/_ansi.h /usr/include/sys/_types.h \
+ /usr/include/machine/_types.h /usr/include/machine/_default_types.h \
+ /usr/include/sys/lock.h /usr/include/sys/cdefs.h \
+ /usr/include/machine/stdlib.h /usr/include/alloca.h \
+ /usr/include/cygwin/stdlib.h /usr/include/cygwin/wait.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/strings.h \
+ /usr/include/sys/string.h /usr/include/math.h ../gsl/gsl_errno.h \
+ /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/stdarg.h \
+ /usr/include/sys/types.h /usr/include/sys/_stdint.h \
+ /usr/include/machine/endian.h /usr/include/machine/_endian.h \
+ /usr/include/bits/endian.h /usr/include/sys/select.h \
+ /usr/include/sys/_sigset.h /usr/include/sys/_timeval.h \
+ /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+ /usr/include/sys/_pthreadtypes.h /usr/include/machine/types.h \
+ /usr/include/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/wordsize.h /usr/include/sys/sysmacros.h \
+ /usr/include/sys/stdio.h /usr/include/errno.h /usr/include/sys/errno.h \
+ ../gsl/gsl_types.h ../gsl/gsl_complex.h ../gsl/gsl_fft_complex.h \
+ ../gsl/gsl_math.h ../gsl/gsl_sys.h ../gsl/gsl_inline.h \
+ ../gsl/gsl_machine.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/syslimits.h \
+ /usr/include/limits.h /usr/include/features.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/float.h \
+ ../gsl/gsl_precision.h ../gsl/gsl_nan.h ../gsl/gsl_pow_int.h \
+ ../gsl/gsl_minmax.h ../gsl/gsl_fft.h ../gsl/gsl_fft_complex_float.h \
+ ../templates_on.h bitreverse.c complex_internal.h bitreverse.h \
+ ../templates_off.h factorize.c factorize.h c_init.c c_main.c c_pass.h \
+ c_pass_2.c c_pass_3.c c_pass_4.c c_pass_5.c c_pass_6.c c_pass_7.c \
+ c_pass_n.c c_radix2.c ../gsl/gsl_fft_halfcomplex.h ../gsl/gsl_fft_real.h \
+ ../gsl/gsl_fft_halfcomplex_float.h ../gsl/gsl_fft_real_float.h hc_init.c \
+ hc_main.c hc_pass.h hc_pass_2.c hc_pass_3.c hc_pass_4.c hc_pass_5.c \
+ hc_pass_n.c hc_radix2.c hc_unpack.c real_init.c real_main.c real_pass.h \
+ real_pass_2.c real_pass_3.c real_pass_4.c real_pass_5.c real_pass_n.c \
+ real_radix2.c real_unpack.c
+
+../config.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/stddef.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/machine/ieeefp.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/newlib.h:
+
+/usr/include/_newlib_version.h:
+
+/usr/include/sys/config.h:
+
+/usr/include/sys/features.h:
+
+/usr/include/cygwin/config.h:
+
+/usr/include/sys/reent.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/machine/_default_types.h:
+
+/usr/include/sys/lock.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/stdlib.h:
+
+/usr/include/alloca.h:
+
+/usr/include/cygwin/stdlib.h:
+
+/usr/include/cygwin/wait.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/strings.h:
+
+/usr/include/sys/string.h:
+
+/usr/include/math.h:
+
+../gsl/gsl_errno.h:
+
+/usr/include/stdio.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/stdarg.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/_stdint.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/machine/_endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/sys/_sigset.h:
+
+/usr/include/sys/_timeval.h:
+
+/usr/include/sys/timespec.h:
+
+/usr/include/sys/_timespec.h:
+
+/usr/include/sys/_pthreadtypes.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/sys/stdio.h:
+
+/usr/include/errno.h:
+
+/usr/include/sys/errno.h:
+
+../gsl/gsl_types.h:
+
+../gsl/gsl_complex.h:
+
+../gsl/gsl_fft_complex.h:
+
+../gsl/gsl_math.h:
+
+../gsl/gsl_sys.h:
+
+../gsl/gsl_inline.h:
+
+../gsl/gsl_machine.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/limits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/features.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/float.h:
+
+../gsl/gsl_precision.h:
+
+../gsl/gsl_nan.h:
+
+../gsl/gsl_pow_int.h:
+
+../gsl/gsl_minmax.h:
+
+../gsl/gsl_fft.h:
+
+../gsl/gsl_fft_complex_float.h:
+
+../templates_on.h:
+
+bitreverse.c:
+
+complex_internal.h:
+
+bitreverse.h:
+
+../templates_off.h:
+
+factorize.c:
+
+factorize.h:
+
+c_init.c:
+
+c_main.c:
+
+c_pass.h:
+
+c_pass_2.c:
+
+c_pass_3.c:
+
+c_pass_4.c:
+
+c_pass_5.c:
+
+c_pass_6.c:
+
+c_pass_7.c:
+
+c_pass_n.c:
+
+c_radix2.c:
+
+../gsl/gsl_fft_halfcomplex.h:
+
+../gsl/gsl_fft_real.h:
+
+../gsl/gsl_fft_halfcomplex_float.h:
+
+../gsl/gsl_fft_real_float.h:
+
+hc_init.c:
+
+hc_main.c:
+
+hc_pass.h:
+
+hc_pass_2.c:
+
+hc_pass_3.c:
+
+hc_pass_4.c:
+
+hc_pass_5.c:
+
+hc_pass_n.c:
+
+hc_radix2.c:
+
+hc_unpack.c:
+
+real_init.c:
+
+real_main.c:
+
+real_pass.h:
+
+real_pass_2.c:
+
+real_pass_3.c:
+
+real_pass_4.c:
+
+real_pass_5.c:
+
+real_pass_n.c:
+
+real_radix2.c:
+
+real_unpack.c:

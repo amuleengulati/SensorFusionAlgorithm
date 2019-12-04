@@ -1,1 +1,0 @@
-The files and folders for GSL library and any other libraries that we use for developing the software will go in this folder.
