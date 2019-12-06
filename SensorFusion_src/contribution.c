@@ -1,16 +1,30 @@
-double* contribution(double lambda[], int n)
+/***************************************************************************
+* Author : Shyam Bhuptani 
+* Function : Contribution 
+* Application : This function takes the eigenvalues and returns the alpha
+* Input : size of eigenvalues n, eigenvalue array (lambda) of size n
+* Output : alpha is an array of size n
+*/
+
+/*Including dependancies*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include "../include/contribution.h" 
+
+double * Contribution(int n, double lambda[n])
 {
-	double sum = 0.0;
-	
-	//compute summation of all eigen values
-	for(int i=0;i<n;i++){
-		sum += lambda[i];
-	}		
-	
-	//compute contribution rate for each component 
-	for(int i=0;i<n;i++){
-		alpha[i] = lambda[i]/sum;
-	}
-//the function returns an 1Xn vector alpha[n] containing the contribution rate of each component
-return alpha;
+    int i,j, sum = 0;
+    double * contribution_array = (double *)malloc(n * sizeof(double));
+
+    for (i = 0; i < n; i++){
+        sum += lambda[i];
+    }
+   /*Computation of SDM matrix elements as per requirement*/
+    for(j = 0;j < n; j++){
+        contribution_array[j] = lambda[j] / sum;
+    }
+
+    return contribution_array;
 }
