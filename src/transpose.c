@@ -1,5 +1,13 @@
-/* This file contains code to compute the transpose of a given matrix */
-#include "transpose.h"
+/******************************************************
+* Author : Amuleen Gulati 
+* Function : transpose 
+* Application : This function computes the transpose of
+* the input matrix
+* Input : number of sensors n as integer, eigen vector matrix T[n][n] 
+* Output : transpose of eigen vector matrix
+*/
+
+#include "..\include\transpose.h"
 
 double** transpose(double** matrix, int n){
 /* Create a matrix to store the transpose and allocate memory to it */ 

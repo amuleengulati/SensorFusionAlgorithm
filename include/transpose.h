@@ -1,6 +1,7 @@
-#ifndef tranpose
-#define transpose
+#ifndef __TRANSPOSE_H__
+#define __TRANSPOSE_H__
 
- double* transpose(double x[]);
+#include "..\lib\gsl\matrix\gsl_matrix.h"
+double** transpose(double** matrix, int n);
 
 #endif

@@ -1,6 +1,9 @@
-#ifndef sdm_h
-#define sdm_h
+#ifndef __SDM_H__
+#define __SDM_H__
 
-double** SDM(float x[], int n);
+#include<stdlib.h>
+#include<math.h>
+
+double ** support_degree_matrix(int n, double temprature[]);
 
 #endif

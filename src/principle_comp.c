@@ -1,14 +1,17 @@
-#include<stdio.h>
-#include ".\gsl\gsl_matrix.h"
-#include "transpose.h"
-#include "multiply.h"
+/******************************************************
+* Author : Amuleen Gulati 
+* Function : principle component 
+* Application : This function computes the principle component values
+* for the input eigen values and eigen vectors
+* Input : number of sensors n as integer, eigen vector matrix T[n][n], eigen value vector D[n]   
+* Output : vector of size n of principle components
+*/
 
-int main()
-{
-int n = 4;
+#include "..\include\principle_comp.h"
+#include "..\include\transpose.h"
+#include "..\include\multiply.h"
 
-/* Taking a sample eigen_value vector*/
-double eigen_value[4] = {2,3,4,5};
+double* principle_component(int n, double** D, double* T){
 
 /* Create a vector to store principal component values */
 double* y;
@@ -31,13 +34,13 @@ gsl_matrix* m = gsl_matrix_alloc(n,n);
 /* Assign sample values to GSL matrix and fill the matrix*/
 for(int i = 0;i < n;i++){
     for(int j = 0;j < n;j++){
-        gsl_matrix_set(m, i, j, i+j);
+        gsl_matrix_set(m, i, j, D[i][j]);
         matrix[i][j] = gsl_matrix_get(m, i, j);
 }
 }
 
 /* Call transpose function */
-matrix = transpose(matrix, 4);
+matrix = transpose(matrix, n);
 
 /*Modify GSL matrix to contain transposed values */ 
 for(int i = 0;i < n;i++){
@@ -52,7 +55,7 @@ for(int i=0;i<n;i++){
     for(int j=0;j<n;j++){
         eigen_vector[j] = gsl_vector_get(&v.vector,j);
 }
-    y[i] = multiply(eigen_vector, eigen_value);
+    y[i] = multiply(eigen_vector, T);
 }
-return 0;
+return y;
 }
