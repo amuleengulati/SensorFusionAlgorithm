@@ -15,7 +15,7 @@
 
 double * contribution(double lambda[], int n)
 {
-    int sum = 0;
+    double sum = 0;
     double * contribution_array = (double *)malloc(n * sizeof(double));
 
     for (int i = 0; i < n; i++){

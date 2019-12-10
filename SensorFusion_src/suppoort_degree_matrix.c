@@ -23,7 +23,7 @@ double ** support_degree_matrix(double sensor_readings[], int n)
  
    /*Computation of SDM matrix elements as per provided equation*/
    for(int x = 0; x < n; x++){
-      for(int y = 0;y < n; y++){
+      for(int y = 0; y < n; y++){
          sdm_matrix[x][y] = exp(-fabs(sensor_readings[x] - sensor_readings[y]));
       }
    }
