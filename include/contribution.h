@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-#ifndef contribution_h
-#define contribution_h
+#ifndef __CONTRIBUTION_H__
+#define __CONTRIBUTION_H__
 
-double * contribution(double lambda[], int n);
-=======
-#ifndef Contribution_h
-#define Contribution_h
-
-double * Contribution(int n, double lambda[n]);
->>>>>>> 96952138571858590c695c5e891efcd57a0e0974
+double * compute_contributions(double lambda[], int n);
 
 #endif

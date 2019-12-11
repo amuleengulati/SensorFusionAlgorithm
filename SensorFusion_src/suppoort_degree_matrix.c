@@ -14,7 +14,7 @@
 #include "../include/support_degree_matrix.h"
 
 /*Function declaration which returns a 2D array */
-double ** support_degree_matrix(double sensor_readings[], int n)
+double ** build_support_degree_matrix(double sensor_readings[], int n)
 {
    /*Allocation of dynamic memory to the 2D output array using malloc*/
    double **sdm_matrix = (double **) malloc(n * sizeof(double *)); 

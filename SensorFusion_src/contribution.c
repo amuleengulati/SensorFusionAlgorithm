@@ -13,7 +13,7 @@
 #include <math.h>
 #include "../include/contribution.h" 
 
-double * contribution(double lambda[], int n)
+double * compute_contributions(double lambda[], int n)
 {
     double sum = 0;
     double * contribution_array = (double *)malloc(n * sizeof(double));
