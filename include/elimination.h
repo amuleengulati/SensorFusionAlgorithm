@@ -1,6 +1,6 @@
-#ifndef elimination
-#define elimination
+#ifndef ELIMINATION_H
+#define ELIMINATION_H
 
- double* elimination(double Z[], int m);
+double *elimination_of_integrated_support(double integrated_support[], int n);
 
-#endif
+#endif 

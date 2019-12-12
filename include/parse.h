@@ -1,1 +1,6 @@
-//header file for parse.c file
+#ifndef PARSE_H
+#define PARSE_H
+
+double *Parse(char file_name[]);
+
+#endif
