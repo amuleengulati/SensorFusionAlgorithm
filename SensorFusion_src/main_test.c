@@ -8,8 +8,10 @@
 #include <stdlib.h>
 #include "../include/support_degree_matrix.h"
 #include "../include/contribution.h"
+#include "../include/integrated_support.h"
 #define sdm_test_array_size 2
 #define contribution_test_array_size 3
+#define integrated_support_test_array_size 2
 
 // Main test function
 int main(int argc, char ** argv){
@@ -47,5 +49,20 @@ int main(int argc, char ** argv){
     }
     free(contri_test_op);
     printf("*****************************************************\n");
+	/*Testing of Function compute_integrated_support using 2* 1-D array alpha and principal_component
+    * @input : alpha of size 2 [10 20] , principal_component of size 2 [1 2]
+    * @output expected : 1D array [10 40]
+    */
+    printf("Testing compute_integrated_support function using array alpha [10 20] and principal_component [1 2]n");
+    double alpha[2] = {10.00,20.00};
+	double principal_component[2] = {1.00,2.00};
+    double * integrated_support_op;
+    integrated_support_op = compute_integrated_support(alpha,principal_component,integrated_support_test_array_size);
+    printf("OutPut 1-D array with below values\n");
+    for (int i = 0; i < integrated_support_test_array_size; i++){
+        printf("%2f\n",integrated_support_op[i]);
+    }
+    free(integrated_support_op);
+	printf("*****************************************************\n");
     return 0;
 }

@@ -1,6 +1,6 @@
-#ifndef integrated_support
-#define integrated_support
+#ifndef INTEGRATED_SUPPORT_H
+#define INTEGRATED_SUPPORT_H
 
- double* integrated_support(double alpha[], double y[], int m);
+double *compute_integrated_support(double alpha[], double principal_components[],int n);
 
-#endif
+#endif 
