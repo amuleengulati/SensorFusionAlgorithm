@@ -10,7 +10,8 @@
 #include <stdlib.h>
 #include <errno.h>
 
-/* Include all dependencies */
+/*! \brief Include all dependencies.
+ */
 #include "..\lib\gsl\eigen\gsl_eigen.h"
 #include "..\lib\gsl\gsl_math.h"
 
@@ -27,10 +28,12 @@
 #define MAX_LINE_SIZE 128
 
 int main(){
-    /* Declare a variable n to store the number of sensor entries with same time values. */
+    /*! \brief Declare a variable n to store the number of sensor entries with same time values. 
+     */
     int n = 2;
 
-    /* Take a sample 2X2 array to test different files */
+    /*! \brief Take a sample 2X2 array to test different files.
+     */
     double** input_array;
     input_array = (double**) malloc(2*sizeof(double));
     for(int r = 0; r < 2; r++){
@@ -48,11 +51,11 @@ int main(){
     printf("Testing eigen vector function using the array [10.0, 20.0, 30.0, 30.5]\n");
 
     /**
-    * \fn double** eigen_vector(int n, double** D)
-    * @param[in] n Integer value indicating size of the matrix.
-    * @param[in] D 2-D array containing the support degree matrix values.
-    * @brief This function computes the eigen vectors for an array of size nXn.
-    */
+     * \fn double** eigen_vector(int n, double** D)
+     * @param[in] n Integer value indicating size of the matrix.
+     * @param[in] D 2-D array containing the support degree matrix values.
+     * @brief This function computes the eigen vectors for an array of size nXn.
+     */
     double** e_vectors;
     e_vectors = (double**) malloc(2*sizeof(double));
     for(int r = 0; r < 2; r++){
@@ -72,11 +75,11 @@ int main(){
     printf("Testing eigen value function using the array [10.0, 20.0, 30.0, 30.5]\n");
 
     /**
-    * \fn double* eigen_value(int n, double** D)
-    * @param[in] n Integer value indicating size of the input matrix.
-    * @param[in] D 2-D array containing the support degree matrix values.
-    * @brief This function computes the eigen values for an array of size nXn.
-    */
+     * \fn double* eigen_value(int n, double** D)
+     * @param[in] n Integer value indicating size of the input matrix.
+     * @param[in] D 2-D array containing the support degree matrix values.
+     * @brief This function computes the eigen values for an array of size nXn.
+     */
     
     double* e_values;
     e_values = (double*) malloc(2*sizeof(double));
@@ -92,15 +95,16 @@ int main(){
     printf("Testing multiply function using the array [10.0, 20.0, 30.0, 30.5]\n");
 
     /**
-    * \fn double multiply(double* eigen_vector, double* eigen_value)
-    * @param[in] eigen_vector a single eigen vector of the input matrix.
-    * @param[in] eigen_value a vector containing eigen values of the input matrix.
-    * @brief This function computes the vector product.
-    */
+     * \fn double multiply(double* eigen_vector, double* eigen_value)
+     * @param[in] eigen_vector a single eigen vector of the input matrix.
+     * @param[in] eigen_value a vector containing eigen values of the input matrix.
+     * @brief This function computes the vector product.
+     */
     
     double product;
     
-    /* Take a sample 1X2 eigen vector */
+    /*! \brief Take a sample 1X2 eigen vector
+     */
     double* sample_e_vector;
     sample_e_vector = (double*) malloc(2*sizeof(double));
     sample_e_vector[0] = 0.813424;
@@ -114,11 +118,11 @@ int main(){
     printf("Testing transpose function using the array [10.0, 20.0, 30.0, 30.5]\n");
 
     /**
-    * \fn double** transpose(double** matrix, int n)
-    * @param[in] matrix 2-D matrix whose transpose is required.
-    * @param[in] n Integer value indicating size of the input matrix.
-    * @brief This function computes the transpose of a given nXn matrix.
-    */
+     * \fn double** transpose(double** matrix, int n)
+     * @param[in] matrix 2-D matrix whose transpose is required.
+     * @param[in] n Integer value indicating size of the input matrix.
+     * @brief This function computes the transpose of a given nXn matrix.
+     */
     
     double** matrix_transpose;
     matrix_transpose = (double**) malloc(2*sizeof(double));
@@ -140,12 +144,12 @@ int main(){
     printf("Testing principal component function using the array [10.0, 20.0, 30.0, 30.5]\n");
 
     /**
-    * \fn double* principle_component(int n, double** D, double* T)
-    * @param[in] n Integer value indicating size of the input matrix.
-    * @param[in] D vector containing the eigen values of the SDM matrix.
-    * @param[in] T 2-D array containing the eigen vector values of the SDM matrix.
-    * @brief This function computes the principal component values.
-    */
+     * \fn double* principle_component(int n, double** D, double* T)
+     * @param[in] n Integer value indicating size of the input matrix.
+     * @param[in] D vector containing the eigen values of the SDM matrix.
+     * @param[in] T 2-D array containing the eigen vector values of the SDM matrix.
+     * @brief This function computes the principal component values.
+     */
     
     double* p_components;
     p_components = (double*) malloc(2*sizeof(double));
@@ -161,18 +165,18 @@ int main(){
     printf("Testing contribution function using the array [10.0, 20.0, 30.0, 30.5]\n");
 
     /**
-    * \fn double* contribution(int n, double* D)
-    * @param[in] n Integer value indicating size of the input matrix.
-    * @param[in] D vector containing the eigen values of the SDM matrix.
-    * @brief This function computes the contribution values.
-    */
+     * \fn double* contribution(int n, double* D)
+     * @param[in] n Integer value indicating size of the input matrix.
+     * @param[in] D vector containing the eigen values of the SDM matrix.
+     * @brief This function computes the contribution values.
+     */
     
     double* c_values;
     c_values = (double*) malloc(2*sizeof(double));
     c_values = contribution(2, e_values);
-    printf("Expected output for contribution values: [-0.2827 1.0]\n");
+    printf("Expected output for contribution values: [-0.2827]\n");
     printf("Contribution values obtained from contribution.c: [");
-    for(int i = 0; i < 2; i++){
+    for(int i = 0; i < 1; i++){
             printf("%f ", c_values[i]);
     }
     printf("]\n\n"); 

@@ -11,6 +11,7 @@
 
 
 #include<stdio.h>
+#include<string.h>
 
 /* Include all dependencies */
 #include "..\include\sdm.h"
@@ -82,12 +83,6 @@ void check(char* line, sensor_data_t* sensor_description){
             token_count++;
         } 
     }
-    if(token_count >= 4){
-        printf("ERROR: TOO MUCH DATA! IGNORING EXTRA DATA!!\n");
-    }
-    else if(token_count < 3){
-        printf("ERROR: INSUFFICIENT DATA! SKIPPING THIS ENTRY!!\n");
-    }
 }
 
 /**
@@ -105,19 +100,48 @@ void delete(int* array, int index){
 total_entries--;
 }
 
-int main(){
+int main(int argc, char* argv[]){
     /* Declare a variable to hold the number of entries for a particular time */
     int n = 0;
 
-    /* Open a file stream */
-    FILE* input_file = fopen("..\\data\\input.csv", "rt");
+    char dir[100] = "..\\data\\input_data\\";
+    printf("%s \n",dir);
+    char filename[50];
+    printf("Please specify the name of your input file in .csv format:");
+    scanf("%s", &filename);
+    strcat(dir, filename);
+
+    /* Open a file stream for input */
+    FILE* input_file = fopen(dir, "rt");
     if(input_file == NULL){
-        printf("File could not be opened: %s\n",strerror(errno));
+        printf("Input file could not be opened: %s\n",strerror(errno));
         return 1;
     }
     else{
-    printf("File opened successfully!\n");
+    printf("Input file opened successfully!\n");
     }
+
+    /*! \brief Open a file stream for output.
+     */
+    char out_dir[100] = "..\\data\\output_data\\";
+    printf("CREATING OUTPUT FILE...\n");
+    char output_file[100];
+    strcpy(output_file, filename);
+    output_file[strlen(output_file) - 4] = '\0';
+    strcat(out_dir, output_file);
+    strcat(out_dir, "_results.txt");
+    
+    /*! \brief Open an output file for storing results.
+     */
+    FILE* output = fopen(out_dir, "wt");
+    if(output == NULL){
+        printf("Output file could not be created: %s\n ABORTING!!",strerror(errno));
+        return 1;
+    }
+    else{
+    printf("Output File created successfully!\nBEGINNING TO WRITE TO OUTPUT FILE!!\n");
+    }
+
 
     char line[MAX_LINE_SIZE];
     sensor_data_t* sensor_description = (sensor_data_t*) malloc(sizeof(sensor_data_t));
@@ -163,7 +187,6 @@ int main(){
             entry = entry + 1;
             delete(temp_array, 0);
             for(int k = 0; k < entry; k++){
-                printf("\nINPUT ARRAY %f", input_array[k]);
                 n = k + 1;
             }
 
@@ -197,12 +220,18 @@ int main(){
             double* contribution_m;
             contribution_m = (double*) malloc(n*sizeof(double));
             contribution_m = contribution(n, D);
+
+            /* Just for debugging */
             for(int i = 0; i < n; i++){
-            printf("\nTIME: %2f CONTRIBUTION: %f ",time, contribution_m[i]);}
+            fprintf(output,"%2f ",contribution_m[i]);
+            }
         }
     }
-
-    /* Close the input file */
+    
+    printf("DONE!\nRESULTS STORED IN %s ", out_dir);
+    /*! \brief Close the input and output file.
+     */
     fclose(input_file);
+    fclose(output);
     return 0;
 }
