@@ -1,11 +1,13 @@
-/******************************************************
-* Author : Shyam Bhuptani 
-* Function : Support Degree Matrix 
-* Application : This function converts the input array[N] (the array of various 
-* sensor readings) into a SDM matrix of which is having degre N*N
-* Input : size of sensor readings array N as integer and sensor_readings[N] of doubles 
-* Output : N*N support degree matrix
-*/
+/**
+ *
+ * \fn build_support_degree_matrix(double sensor_readings[], int n)
+ * \author Shyam Bhuptani
+ * \brief This function converts the input array[N] (the array of various 
+ * sensor readings) into a SDM matrix of which is having degre N*N
+ * @param[in] size of sensor readings array N as integer
+ * @param[in] sensor_readings[N] of doubles  
+ * @return N*N support degree matrix
+ */
 
 /*Including dependancies*/
 #include <stdio.h>
@@ -14,8 +16,7 @@
 #include "../include/support_degree_matrix.h"
 
 /*Function declaration which returns a 2D array */
-double ** build_support_degree_matrix(double sensor_readings[], int n)
-{
+double ** build_support_degree_matrix(double sensor_readings[], int n){
    /*Allocation of dynamic memory to the 2D output array using malloc*/
    double **sdm_matrix = (double **) malloc(n * sizeof(double *)); 
    for (int i = 0; i < n; i++) 

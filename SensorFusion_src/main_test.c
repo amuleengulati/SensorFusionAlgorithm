@@ -1,7 +1,7 @@
-/*******************************************************
-* Author : Shyam Bhuptani 
-* Function : Unit Testing of all Functions
-*/
+/**
+ * \author Shyam Bhuptani
+ * \brief This function provides basic unit testing
+ */
 
 /*Including all dependancies*/
 #include <stdio.h>
@@ -12,7 +12,6 @@
 #include "../include/elimination.h"
 #include "../include/weight_coefficient.h"
 #include "../include/fused_output.h"
-#include "../include/parse.h"
 
 #define SDM_TEST_ARRAY_SIZE 2
 #define CONTRIBUTION_TEST_ARRAY_SIZE 3
@@ -20,7 +19,6 @@
 #define ELIMINATION_TEST_ARRAY_SIZE 4
 #define WEIGHT_TEST_ARRAY_SIZE 4
 #define FUSED_OP_TEST_ARRAY_SIZE 4
-#define NUMBER_OF_SENSOR 3
 
 // Main test function
 int main(int argc, char ** argv){
@@ -122,22 +120,6 @@ int main(int argc, char ** argv){
     double fused_value;
     fused_value = fused_output(sensor_readings,weights,FUSED_OP_TEST_ARRAY_SIZE);
     printf("Fused value is %2f\n",fused_value);
-	printf("*****************************************************\n");
-	/*Testing of parse using input csv file
-	* this function produces an array and length of array will be equal to total number of sensor
-	* and the elements will be respective value for sensors
-    * @input : sample input_data.csv
-    * @output expected : 1D array with all sensor values
-    */
-    printf("Testing of input_data.csv file\n");
-	printf("Expected output [45 46 50]\n");
-    char file_name[] = "..\\data\\input.csv";
-    double *sensor_value = (double *) malloc(NUMBER_OF_SENSOR * sizeof(double *));
-    sensor_value = parse(file_name);
-    for(int i = 0; i < NUMBER_OF_SENSOR; i++){
-        printf("%2f\n",sensor_value[i]);
-    }
-    return 0;
 	printf("*****************************************************\n");
 	
 	

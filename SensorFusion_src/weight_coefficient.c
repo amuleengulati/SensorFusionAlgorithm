@@ -1,12 +1,13 @@
-/******************************************************
-* Author : Shyam Bhuptani 
-* Function : weighted_coefficient
-* Application : This function uses the elimination array and 
-* provides the respective weights for each elements.
-* Input : elimination array(n),number of sensors
-* Output : weight array of size n
-*/
-
+/**
+ *
+ * \fn find_weight_coefficient(double elimination_matrix[], int n)
+ * \author Shyam Bhuptani
+ * \brief This function uses the elimination array and 
+ * provides the respective weights for each elements.
+ * @param[in] elimination array(n)
+ * @param[in] number of sensors  
+ * @return weight array of size n
+ */
 /*Including dependancies*/
 #include <stdio.h>
 #include <stdlib.h>
