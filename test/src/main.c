@@ -18,6 +18,10 @@
 #include "..\include\eigen.h"
 #include "..\include\principle_comp.h"
 #include "..\include\contribution.h"
+#include "..\include\integrated_support.h"
+#include "..\include\elimination.h"
+#include "..\include\weight_coefficient.h"
+#include "..\include\fused_output.h"
 #include "..\include\parse.h"
 
 #define DELIMITER ","
@@ -105,7 +109,6 @@ int main(int argc, char* argv[]){
     int n = 0;
 
     char dir[100] = "..\\data\\input_data\\";
-    printf("%s \n",dir);
     char filename[50];
     printf("Please specify the name of your input file in .csv format:");
     scanf("%s", &filename);
@@ -141,7 +144,9 @@ int main(int argc, char* argv[]){
     else{
     printf("Output File created successfully!\nBEGINNING TO WRITE TO OUTPUT FILE!!\n");
     }
-
+    fputs("-----------------------------------------------------------------\n", output);
+    fputs("|      TIME                      |           FUSED_SENSOR_VALUE |\n", output);
+    fputs("-----------------------------------------------------------------\n", output);
 
     char line[MAX_LINE_SIZE];
     sensor_data_t* sensor_description = (sensor_data_t*) malloc(sizeof(sensor_data_t));
@@ -161,6 +166,7 @@ int main(int argc, char* argv[]){
     * input_array stores the sensor values for a particular time of input.
     */
     int temp_array[total_entries];
+    int delete_indices[total_entries];
     double input_array[total_entries];
 
     /* Fill the temp_array with indices for input processing. */
@@ -177,18 +183,21 @@ int main(int argc, char* argv[]){
     while(total_entries){
         for(int j = 1; j < total_entries; j++){
             int entry = 0;
-            if(sensor_description_list[temp_array[0]].time == sensor_description_list[temp_array[j]].time){
-                input_array[entry] = sensor_description_list[temp_array[j]].value;
-                entry = entry + 1;
-                delete(temp_array,j);
+            int index = 0;
+            for(int k = 1; k < total_entries; k++){
+                if(sensor_description_list[temp_array[0]].time == sensor_description_list[temp_array[k]].time){
+                    input_array[entry] = sensor_description_list[temp_array[k]].value;
+                    entry = entry + 1;
+                    delete(temp_array, k);
+                    k = k - 1;
+                }
             }
+
             input_array[entry] = sensor_description_list[temp_array[0]].value;
             float time = sensor_description_list[temp_array[0]].time;
             entry = entry + 1;
             delete(temp_array, 0);
-            for(int k = 0; k < entry; k++){
-                n = k + 1;
-            }
+            n = entry;
 
             /* Declare a 2-D matrix to store the SDM matrix. */  
             double** sd_matrix;
@@ -221,10 +230,36 @@ int main(int argc, char* argv[]){
             contribution_m = (double*) malloc(n*sizeof(double));
             contribution_m = contribution(n, D);
 
+            /* Declare a vector to store the contribution values of k principle components. */
+            double* contribution_alpha;
+            contribution_alpha = (double*) malloc(n*sizeof(double));
+            contribution_alpha = contribution_k(n, D);
+            
+            /*! \brief Declare a vector to store integrated support degree.
+             */
+            double* integrated_support_degree;
+            integrated_support_degree = (double*) malloc(n*sizeof(double));
+            integrated_support_degree = compute_integrated_support(contribution_alpha, prin_comp, n);  
+         
+            /*! \brief Declare a vector to store results after elimination.
+             */
+            double* eliminated;
+            eliminated = (double*) malloc(n*sizeof(double));
+            eliminated = elimination_of_integrated_support(integrated_support_degree,n); 
+
+            /*! \brief Declare a vector to store weight coefficients.
+             */
+            double* w_coefficients;
+            w_coefficients = (double*) malloc(n*sizeof(double));
+            w_coefficients = find_weight_coefficient(eliminated,n); 
+
+            /*! \brief Declare a double to store fused output.
+             */
+            double fused_sensor_output;
+            fused_sensor_output = fused_output(input_array,w_coefficients,n);
+
             /* Just for debugging */
-            for(int i = 0; i < n; i++){
-            fprintf(output,"%2f ",contribution_m[i]);
-            }
+            fprintf(output,"     %.2f                             %f\n",time, fused_sensor_output);
         }
     }
     

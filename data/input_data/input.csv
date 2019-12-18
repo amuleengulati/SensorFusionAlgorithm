@@ -1,5 +1,7 @@
 ﻿Time (24h clock),sensor_name,value
 13.2,sens1,10
 13.2,sens2,20
+13.2,sens3,20.5
+13.2,sens4,22
 13.5,sens1,30
 13.5,sens3,30.5
