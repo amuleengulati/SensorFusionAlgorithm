@@ -6,12 +6,12 @@
 /*Including all dependancies*/
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/support_degree_matrix.h"
-#include "../include/contribution.h"
-#include "../include/integrated_support.h"
-#include "../include/elimination.h"
-#include "../include/weight_coefficient.h"
-#include "../include/fused_output.h"
+#include "../../include/support_degree_matrix.h"
+#include "../../include/contribution.h"
+#include "../../include/integrated_support.h"
+#include "../../include/elimination.h"
+#include "../../include/weight_coefficient.h"
+#include "../../include/fused_output.h"
 
 #define SDM_TEST_ARRAY_SIZE 2
 #define CONTRIBUTION_TEST_ARRAY_SIZE 3
@@ -23,11 +23,12 @@
 // Main test function
 int main(int argc, char ** argv){
 
-    /*Testing of Function Support Degree Matrix using one-D input array
+    /**
+	* \brief Testing of Function Support Degree Matrix using one-D param array
     * This function performs (e^-(abolute(reading[i]-reading[j]))) for 2 sensors 
     * and provides results
-    * @input : double array of size 2 for testing with value [10.00, 20.00]
-    * @output expected : 2D array [[1.000000 0.000045] [0.000045 1.000000]]
+    * @param : double array of size 2 for testing with value [10.00, 20.00]
+    * @return 2D array [[1.000000 0.000045] [0.000045 1.000000]]
     */
     printf("*****************************************************\n");
     printf("Testing Support degree function using array [10.00,20.00]\n");
@@ -43,9 +44,10 @@ int main(int argc, char ** argv){
     }
     free(support_degree_test);
     printf("*****************************************************\n");
-    /*Testing of Function compute_contributions using one-D input array
-    * @input : double array of size 3 for testing with value [23 34 45],size of array
-    * @output expected : 2D array [0.225490 0.333333 0.441176]
+    /**
+	* \brief Testing of Function compute_contributions using one-D param array
+    * @param : double array of size 3 for testing with value [23 34 45],size of array
+    * @return 2D array [0.225490 0.333333 0.441176]
     */
     printf("Testing compute_contributions function using array [23.00,34.00,45.00]\n");
 	printf("Expected array is [0.225490 0.333333 0.441176]\n");
@@ -58,10 +60,11 @@ int main(int argc, char ** argv){
     }
     free(contri_test_op);
     printf("*****************************************************\n");
-	/*Testing of Function compute_integrated_support using 2* 1-D 
+	/**
+	* \brief Testing of Function compute_integrated_support using 2* 1-D 
 	* array alpha and principal_component
-    * @input : alpha of size 2 [10 20] , principal_component of size 2 [1 2], size of array
-    * @output expected : 1D array [10 40]
+    * @param : alpha of size 2 [10 20] , principal_component of size 2 [1 2], size of array
+    * @return 1D array [10 40]
     */
     printf("Testing compute_integrated_support function using array alpha [10 20] and principal_component [1 2]\n");
 	printf("Expected array is [10.00 40.00]\n");
@@ -75,11 +78,12 @@ int main(int argc, char ** argv){
     }
     free(integrated_support_op);
 	printf("*****************************************************\n");
-	/*Testing of Function elimination of integrated support using integrated support
+	/**
+	* \brief Testing of Function elimination of integrated support using integrated support
 	* here the return array contains value of integrated array except the value
 	* which is below than 0.7*average value, those element will be 0
-    * @input : integrated support [10 11 12 1] , size of array
-    * @output expected : 1D array [10 11 12 0]
+    * @param : integrated support [10 11 12 1] , size of array
+    * @return 1D array [10 11 12 0]
     */
     printf("Testing compute_integrated_support function using array integrated support [10 11 12 1]\n");
 	printf("Expected array is [10.00 11.00 12.00 0.00]\n");
@@ -92,10 +96,11 @@ int main(int argc, char ** argv){
     }
     free(elimination_test_op);
 	printf("*****************************************************\n");
-	/*Testing of Function weight_coefficient using elimination matrix
+	/**
+	* \brief Testing of Function weight_coefficient using elimination matrix
 	* returns the weight ( value / sum of array)
-    * @input : elimination 1-D array [10 11 12 0] , size of array
-    * @output expected : 1D array [10 11 12 0]
+    * @param : elimination 1-D array [10 11 12 0] , size of array
+    * @return 1D array [10 11 12 0]
     */
     printf("Testing weight_coefficient function using array integrated support [10 11 12 0]\n");
 	printf("Expected output [0.30 0.33 0.36 0.00]\n");
@@ -108,10 +113,11 @@ int main(int argc, char ** argv){
     }
     free(weights_test_op);
 	printf("*****************************************************\n");
-	/*Testing of Function fused_output using sensor readings and weights 
+	/**
+	* \brief Testing of Function fused_output using sensor readings and weights 
 	* this function produces final output which is estimated value of sensor fusion algorithm
-    * @input : sensor readings [10 11 12 0], weights [0.27 0.25 0.28 0], size of readings
-    * @output expected : 1D array [10 11 12 0]
+    * @param : sensor readings [10 11 12 0], weights [0.27 0.25 0.28 0], size of readings
+    * @return 1D array [10 11 12 0]
     */
     printf("Testing weight_coefficient function using sensor readings [10 11 12 0],weights [0.27 0.25 0.28 0]\n");
 	printf("Expected output 8.81\n");
