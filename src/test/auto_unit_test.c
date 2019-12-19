@@ -239,6 +239,7 @@ int main(){
             printf("{%d} - {%d} element value is %2f\n",i,j,support_degree_test[i][j]);
         }
     }
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     free(support_degree_test);
     printf("*****************************************************\n");
 
@@ -258,7 +259,9 @@ int main(){
     for (int i = 0; i < INTEGRATED_SUPPORT_TEST_ARRAY_SIZE; i++){
         printf("%2f\n",integrated_support_op[i]);
     }
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     free(integrated_support_op);
+
 
     printf("*****************************************************\n");
     /*Testing of Function elimination of integrated support using integrated support
@@ -276,6 +279,7 @@ int main(){
     for (int i = 0; i < ELIMINATION_TEST_ARRAY_SIZE; i++){
         printf("%2f\n",elimination_test_op[i]);
     }
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     free(elimination_test_op);
     printf("*****************************************************\n");
 
@@ -293,6 +297,7 @@ int main(){
     for (int i = 0; i < WEIGHT_TEST_ARRAY_SIZE; i++){
         printf("%2f\n",weights_test_op[i]);
     }
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     free(weights_test_op);
     printf("*****************************************************\n");
 
@@ -308,6 +313,7 @@ int main(){
     double fused_value;
     fused_value = fused_output(sensor_readings,weights,FUSED_OP_TEST_ARRAY_SIZE);
     printf("Fused value is %.2f\n",fused_value);
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     printf("*****************************************************\n");
     return 0;
 }
