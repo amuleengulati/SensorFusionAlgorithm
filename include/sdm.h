@@ -4,6 +4,6 @@
 #include<stdlib.h>
 #include<math.h>
 
-double ** support_degree_matrix(int n, double temprature[]);
+double ** build_support_degree_matrix(double sensor_readings[], int n);
 
 #endif

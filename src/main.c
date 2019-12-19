@@ -3,7 +3,7 @@
  * @author Amuleen Gulati
  * @date 15 Dec 2019
  * @brief Processing of input file, calling different functions to compute output and storing data in output file.
- *
+ * \mainpage This program is designed to compute the fused value by combining the input from multiple sensors provided at a given time of the day. Here, the sensors are providing individual values for specific times, which can be processed by the sensor fusion algorithm to compute a single correct value for distinct time values. The data is provided by the client in a .csv file, in which 3 parameters are specified, i.e., time, sensor name and temperature measured by the sensor at provided time.
  * Input file is a .csv containing sensor data. The program will output a single fused 
  * output value for seperate time values as well as a list of sensors which are out of
  * range. 
