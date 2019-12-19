@@ -1,0 +1,52 @@
+\hypertarget{contribution__k_8c}{}\doxysection{C\+:/\+Users/mitesh/\+Desktop/\+C\+\_\+\+A\+D\+V\+\_\+\+T\+P\+O\+\_\+\+I\+N\+\_\+\+S\+O\+F\+T/\+Project/\+Sensor\+Fusion\+Algorithm/src/contribution\+\_\+k.c File Reference}
+\label{contribution__k_8c}\index{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/contribution\_k.c@{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/contribution\_k.c}}
+
+
+Computes contribution rate of first k principal ~\newline
+ components.  
+
+
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}contribution.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \mbox{\hyperlink{contribution__k_8c_aa3753f401a699068b63dd8ea444d6921}{contribution\+\_\+k}} (int n, double $\ast$D)
+\begin{DoxyCompactList}\small\item\em This function computes the contribution values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes contribution rate of first k principal ~\newline
+ components. 
+
+\begin{DoxyAuthor}{Author}
+Amuleen Gulati 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{contribution__k_8c_aa3753f401a699068b63dd8ea444d6921}\label{contribution__k_8c_aa3753f401a699068b63dd8ea444d6921}} 
+\index{contribution\_k.c@{contribution\_k.c}!contribution\_k@{contribution\_k}}
+\index{contribution\_k@{contribution\_k}!contribution\_k.c@{contribution\_k.c}}
+\doxysubsubsection{\texorpdfstring{contribution\_k()}{contribution\_k()}}
+{\footnotesize\ttfamily double $\ast$ contribution\+\_\+k (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{double $\ast$}]{D }\end{DoxyParamCaption})}
+
+
+
+This function computes the contribution values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & Integer value indicating size of the input matrix. \\
+\hline
+\mbox{\texttt{ in}}  & {\em D} & vector containing the eigen values of the S\+DM matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+psi 1Xn vector containing contribution rates of m principal components. 
+\end{DoxyReturn}
+Compute the sum of eigen\+\_\+value vector.
+
+Compute the contribution rate of kth principal component

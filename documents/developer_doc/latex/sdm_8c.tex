@@ -1,0 +1,38 @@
+\hypertarget{sdm_8c}{}\doxysection{C\+:/\+Users/mitesh/\+Desktop/\+C\+\_\+\+A\+D\+V\+\_\+\+T\+P\+O\+\_\+\+I\+N\+\_\+\+S\+O\+F\+T/\+Project/\+Sensor\+Fusion\+Algorithm/src/sdm.c File Reference}
+\label{sdm_8c}\index{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/sdm.c@{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/sdm.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/support\+\_\+degree\+\_\+matrix.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$$\ast$ \mbox{\hyperlink{sdm_8c_a22bad9039b502266763e6e1c9bc53a51}{build\+\_\+support\+\_\+degree\+\_\+matrix}} (double sensor\+\_\+readings\mbox{[}$\,$\mbox{]}, int n)
+\begin{DoxyCompactList}\small\item\em This function converts the input array\mbox{[}N\mbox{]} (the array of various sensor readings) into a S\+DM matrix of which is having degre N$\ast$N. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sdm_8c_a22bad9039b502266763e6e1c9bc53a51}\label{sdm_8c_a22bad9039b502266763e6e1c9bc53a51}} 
+\index{sdm.c@{sdm.c}!build\_support\_degree\_matrix@{build\_support\_degree\_matrix}}
+\index{build\_support\_degree\_matrix@{build\_support\_degree\_matrix}!sdm.c@{sdm.c}}
+\doxysubsubsection{\texorpdfstring{build\_support\_degree\_matrix()}{build\_support\_degree\_matrix()}}
+{\footnotesize\ttfamily build\+\_\+support\+\_\+degree\+\_\+matrix (\begin{DoxyParamCaption}\item[{double}]{sensor\+\_\+readings\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+This function converts the input array\mbox{[}N\mbox{]} (the array of various sensor readings) into a S\+DM matrix of which is having degre N$\ast$N. 
+
+\begin{DoxyAuthor}{Author}
+Shyam Bhuptani 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em size} & of sensor readings array N as integer \\
+\hline
+\mbox{\texttt{ in}}  & {\em sensor\+\_\+readings\mbox{[}\+N\mbox{]}} & of doubles ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N$\ast$N support degree matrix 
+\end{DoxyReturn}

@@ -1,0 +1,164 @@
+\hypertarget{main_8c}{}\doxysection{C\+:/\+Users/mitesh/\+Desktop/\+C\+\_\+\+A\+D\+V\+\_\+\+T\+P\+O\+\_\+\+I\+N\+\_\+\+S\+O\+F\+T/\+Project/\+Sensor\+Fusion\+Algorithm/src/main.c File Reference}
+\label{main_8c}\index{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/main.c@{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}sdm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}eigen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}principle\+\_\+comp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}contribution.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}integrated\+\_\+support.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}elimination.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}weight\+\_\+coefficient.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}fused\+\_\+output.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}parse.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a23195218eef2cf21e2beae685a041783}{D\+E\+L\+I\+M\+I\+T\+ER}}~\char`\"{},\char`\"{}
+\item 
+\#define \mbox{\hyperlink{main_8c_ad30c77daca10f0c2b941969c01beedee}{M\+A\+X\+\_\+\+E\+N\+T\+R\+I\+ES}}~100
+\item 
+\#define \mbox{\hyperlink{main_8c_a706068f562dd5c64a8b7bbd4b2298dd1}{M\+A\+X\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+ZE}}~128
+\item 
+\#define \mbox{\hyperlink{main_8c_a942cfa97628a5168303fb8b3c6b940f0}{F\+A\+U\+L\+T\+\_\+\+T\+O\+L\+E\+R\+A\+N\+CE}}~0.\+7
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a9aaa79dd0470bc10ece1cc0fa18b44b5}{save\+\_\+sensor\+\_\+description}} (char $\ast$token, int token\+\_\+count, sensor\+\_\+data\+\_\+t $\ast$sensor\+\_\+description)
+\item 
+void \mbox{\hyperlink{main_8c_a4d145aa66f3650219d3850492770e072}{print\+\_\+sensor\+\_\+description}} (sensor\+\_\+data\+\_\+t $\ast$sensor\+\_\+description)
+\begin{DoxyCompactList}\small\item\em The function is used to print the sensor data read from the input .csv file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_af130ea34297be6db0843b1e2c969fe10}{check}} (char $\ast$line, sensor\+\_\+data\+\_\+t $\ast$sensor\+\_\+description)
+\begin{DoxyCompactList}\small\item\em The function is used to check whether the data being read has all the necessary fields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a6c16b25f3b8c21d9a797eb006cdc431a}{delete}} (int $\ast$array, int index)
+\begin{DoxyCompactList}\small\item\em The function is used to delete an array element in the required position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a34147b3a497d6a7fac5b8aaddb18dc34}{total\+\_\+entries}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a23195218eef2cf21e2beae685a041783}\label{main_8c_a23195218eef2cf21e2beae685a041783}} 
+\index{main.c@{main.c}!DELIMITER@{DELIMITER}}
+\index{DELIMITER@{DELIMITER}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{DELIMITER}{DELIMITER}}
+{\footnotesize\ttfamily \#define D\+E\+L\+I\+M\+I\+T\+ER~\char`\"{},\char`\"{}}
+
+\mbox{\Hypertarget{main_8c_a942cfa97628a5168303fb8b3c6b940f0}\label{main_8c_a942cfa97628a5168303fb8b3c6b940f0}} 
+\index{main.c@{main.c}!FAULT\_TOLERANCE@{FAULT\_TOLERANCE}}
+\index{FAULT\_TOLERANCE@{FAULT\_TOLERANCE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{FAULT\_TOLERANCE}{FAULT\_TOLERANCE}}
+{\footnotesize\ttfamily \#define F\+A\+U\+L\+T\+\_\+\+T\+O\+L\+E\+R\+A\+N\+CE~0.\+7}
+
+\mbox{\Hypertarget{main_8c_ad30c77daca10f0c2b941969c01beedee}\label{main_8c_ad30c77daca10f0c2b941969c01beedee}} 
+\index{main.c@{main.c}!MAX\_ENTRIES@{MAX\_ENTRIES}}
+\index{MAX\_ENTRIES@{MAX\_ENTRIES}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_ENTRIES}{MAX\_ENTRIES}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+E\+N\+T\+R\+I\+ES~100}
+
+\mbox{\Hypertarget{main_8c_a706068f562dd5c64a8b7bbd4b2298dd1}\label{main_8c_a706068f562dd5c64a8b7bbd4b2298dd1}} 
+\index{main.c@{main.c}!MAX\_LINE\_SIZE@{MAX\_LINE\_SIZE}}
+\index{MAX\_LINE\_SIZE@{MAX\_LINE\_SIZE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_LINE\_SIZE}{MAX\_LINE\_SIZE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+L\+I\+N\+E\+\_\+\+S\+I\+ZE~128}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_af130ea34297be6db0843b1e2c969fe10}\label{main_8c_af130ea34297be6db0843b1e2c969fe10}} 
+\index{main.c@{main.c}!check@{check}}
+\index{check@{check}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily void check (\begin{DoxyParamCaption}\item[{char $\ast$}]{line,  }\item[{sensor\+\_\+data\+\_\+t $\ast$}]{sensor\+\_\+description }\end{DoxyParamCaption})}
+
+
+
+The function is used to check whether the data being read has all the necessary fields. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em line} & a pointer to the current line of input which is being read. \\
+\hline
+\mbox{\texttt{ in}}  & {\em sensor\+\_\+description} & a pointer to the structure object which will store the data on the line being read. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a6c16b25f3b8c21d9a797eb006cdc431a}\label{main_8c_a6c16b25f3b8c21d9a797eb006cdc431a}} 
+\index{main.c@{main.c}!delete@{delete}}
+\index{delete@{delete}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily void delete (\begin{DoxyParamCaption}\item[{int $\ast$}]{array,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+The function is used to delete an array element in the required position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em array} & a pointer to the array on which deletion has to be performed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em index} & the position in the array where the element has to be deleted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Open a file stream for output.
+
+Open an output file for storing results.
+
+Declare 2 arrays to manage input processing. temp\+\_\+array store the indices which have not been processed yet. input\+\_\+array stores the sensor values for a particular time of input.
+
+Call the functions to compute fused output seperately for different time values. In each iteration, fused output for one time value is computed. temp\+\_\+array is updated in each iteration to store only those indices which have not been processed yet. The loop continues until all sensor entries are processed.
+
+Declare a vector to store integrated support degree.
+
+Declare a vector to store results after elimination.
+
+Declare a vector to store weight coefficients.
+
+Declare a double to store fused output.
+
+Send output to output file.
+
+Compute out-\/of-\/range sensors and send to output file.
+
+Close the input and output file.
+
+Free memory space.\mbox{\Hypertarget{main_8c_a4d145aa66f3650219d3850492770e072}\label{main_8c_a4d145aa66f3650219d3850492770e072}} 
+\index{main.c@{main.c}!print\_sensor\_description@{print\_sensor\_description}}
+\index{print\_sensor\_description@{print\_sensor\_description}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{print\_sensor\_description()}{print\_sensor\_description()}}
+{\footnotesize\ttfamily void print\+\_\+sensor\+\_\+description (\begin{DoxyParamCaption}\item[{sensor\+\_\+data\+\_\+t $\ast$}]{sensor\+\_\+description }\end{DoxyParamCaption})}
+
+
+
+The function is used to print the sensor data read from the input .csv file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sensor\+\_\+description} & a pointer to the sensor whose value is to be printed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a9aaa79dd0470bc10ece1cc0fa18b44b5}\label{main_8c_a9aaa79dd0470bc10ece1cc0fa18b44b5}} 
+\index{main.c@{main.c}!save\_sensor\_description@{save\_sensor\_description}}
+\index{save\_sensor\_description@{save\_sensor\_description}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{save\_sensor\_description()}{save\_sensor\_description()}}
+{\footnotesize\ttfamily void save\+\_\+sensor\+\_\+description (\begin{DoxyParamCaption}\item[{char $\ast$}]{token,  }\item[{int}]{token\+\_\+count,  }\item[{sensor\+\_\+data\+\_\+t $\ast$}]{sensor\+\_\+description }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a34147b3a497d6a7fac5b8aaddb18dc34}\label{main_8c_a34147b3a497d6a7fac5b8aaddb18dc34}} 
+\index{main.c@{main.c}!total\_entries@{total\_entries}}
+\index{total\_entries@{total\_entries}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{total\_entries}{total\_entries}}
+{\footnotesize\ttfamily int total\+\_\+entries = 0}
+

@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['this_20program_20is_20designed_20to_20compute_20the_20fused_20value_20by_20combining_20the_20input_20from_20multiple_20sensors_20provided_20at_20a_20given_20time_20of_20the_20day_2e_20here_2c_20the_20sensors_20are_20providing_20individual_20values_20for_20specific_20times_2c_20which_20can_20be_20processed_20by_20the_20sensor_20fusion_20algorithm_20to_20compute_20a_20single_20correct_20value_20for_20distinct_20time_20values_2e_20the_20data_20is_20provided_20by_20the_20client_20in_20a_20_2ecsv_20file_2c_20in_20which_203_20parameters_20are_20specified_2c_20i_2ee_2e_2c_20time_2c_20sensor_20name_20and_20temperature_20measured_20by_20the_20sensor_20at_20provided_20time_2e_31',['This program is designed to compute the fused value by combining the input from multiple sensors provided at a given time of the day. Here, the sensors are providing individual values for specific times, which can be processed by the sensor fusion algorithm to compute a single correct value for distinct time values. The data is provided by the client in a .csv file, in which 3 parameters are specified, i.e., time, sensor name and temperature measured by the sensor at provided time.',['../index.html',1,'']]],
+  ['total_5fentries_32',['total_entries',['../main_8c.html#a34147b3a497d6a7fac5b8aaddb18dc34',1,'main.c']]],
+  ['transpose_33',['transpose',['../transpose_8c.html#a3c5849becba7e10b7671106f71d393be',1,'transpose.c']]],
+  ['transpose_2ec_34',['transpose.c',['../transpose_8c.html',1,'']]]
+];

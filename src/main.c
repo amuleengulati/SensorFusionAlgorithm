@@ -282,6 +282,18 @@ int main(int argc, char* argv[]){
             if(count == 0){
                 fprintf(output, " NONE\n");
             }
+         /*! \brief Free memory space.
+          */
+        free(sensor_description);
+        free(sd_matrix);
+        free(T);
+        free(D);
+        free(prin_comp);
+        free(contribution_m);
+        free(contribution_alpha);
+        free(integrated_support_degree);
+        free(eliminated);
+        free(w_coefficients);
         }
     }
     
@@ -290,18 +302,5 @@ int main(int argc, char* argv[]){
      */
     fclose(input_file);
     fclose(output);
-   
-    /*! \brief Free memory space.
-     */
-    free(sensor_description);
-    free(sd_matrix);
-    free(T);
-    free(D);
-    free(prin_comp);
-    free(contribution_m);
-    free(contribution_alpha);
-    free(integrated_support_degree);
-    free(eliminated);
-    free(w_coefficients);
     return 0;
 }

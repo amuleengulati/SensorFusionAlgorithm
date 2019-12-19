@@ -1,0 +1,63 @@
+\hypertarget{eigen__vector_8c}{}\doxysection{C\+:/\+Users/mitesh/\+Desktop/\+C\+\_\+\+A\+D\+V\+\_\+\+T\+P\+O\+\_\+\+I\+N\+\_\+\+S\+O\+F\+T/\+Project/\+Sensor\+Fusion\+Algorithm/src/eigen\+\_\+vector.c File Reference}
+\label{eigen__vector_8c}\index{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/eigen\_vector.c@{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/eigen\_vector.c}}
+
+
+Computes the eigen vectors matrix having degree ~\newline
+ n$\ast$n for the input sd\+\_\+matrix\mbox{[}n\mbox{]}\mbox{[}n\mbox{]} (the S\+DM matrix) .  
+
+
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}eigen.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$$\ast$ \mbox{\hyperlink{eigen__vector_8c_a864859f749322924842074a1ad7b04cc}{eigen\+\_\+vector}} (int n, double $\ast$$\ast$D)
+\begin{DoxyCompactList}\small\item\em This function computes the eigen vectors for an array of size n\+Xn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the eigen vectors matrix having degree ~\newline
+ n$\ast$n for the input sd\+\_\+matrix\mbox{[}n\mbox{]}\mbox{[}n\mbox{]} (the S\+DM matrix) . 
+
+\begin{DoxyAuthor}{Author}
+Amuleen Gulati 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{eigen__vector_8c_a864859f749322924842074a1ad7b04cc}\label{eigen__vector_8c_a864859f749322924842074a1ad7b04cc}} 
+\index{eigen\_vector.c@{eigen\_vector.c}!eigen\_vector@{eigen\_vector}}
+\index{eigen\_vector@{eigen\_vector}!eigen\_vector.c@{eigen\_vector.c}}
+\doxysubsubsection{\texorpdfstring{eigen\_vector()}{eigen\_vector()}}
+{\footnotesize\ttfamily double $\ast$$\ast$ eigen\+\_\+vector (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{double $\ast$$\ast$}]{D }\end{DoxyParamCaption})}
+
+
+
+This function computes the eigen vectors for an array of size n\+Xn. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & Integer value indicating size of the matrix. \\
+\hline
+\mbox{\texttt{ in}}  & {\em D} & 2-\/D array containing the support degree matrix values. \\
+\hline
+\end{DoxyParams}
+Initialize an n\+Xn matrix to store eigen vectors.
+
+Create a G\+SL matrix M.
+
+Assign the elements of Matrix.
+
+Create a G\+SL matrix to store eigenvectors.
+
+Create a G\+SL vector to store eigenvalues.
+
+Initialize an eigen workspace.
+
+Compute the eigenvalues and eigenvectors.
+
+Assign the computed eigenvectors to the evector matrix.
+
+Free the G\+SL memory.

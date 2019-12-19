@@ -1,0 +1,55 @@
+\hypertarget{transpose_8c}{}\doxysection{C\+:/\+Users/mitesh/\+Desktop/\+C\+\_\+\+A\+D\+V\+\_\+\+T\+P\+O\+\_\+\+I\+N\+\_\+\+S\+O\+F\+T/\+Project/\+Sensor\+Fusion\+Algorithm/src/transpose.c File Reference}
+\label{transpose_8c}\index{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/transpose.c@{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/transpose.c}}
+
+
+Computes the transpose of the input matrix.  
+
+
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}transpose.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$$\ast$ \mbox{\hyperlink{transpose_8c_a3c5849becba7e10b7671106f71d393be}{transpose}} (double $\ast$$\ast$matrix, int n)
+\begin{DoxyCompactList}\small\item\em This function computes the transpose of a given n\+Xn matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the transpose of the input matrix. 
+
+\begin{DoxyAuthor}{Author}
+Amuleen Gulati 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+7 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{transpose_8c_a3c5849becba7e10b7671106f71d393be}\label{transpose_8c_a3c5849becba7e10b7671106f71d393be}} 
+\index{transpose.c@{transpose.c}!transpose@{transpose}}
+\index{transpose@{transpose}!transpose.c@{transpose.c}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily double $\ast$$\ast$ transpose (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{matrix,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+This function computes the transpose of a given n\+Xn matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix} & 2-\/D matrix whose transpose is required. \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & Integer value indicating size of the input matrix. \\
+\hline
+\end{DoxyParams}
+Create a matrix to store the transpose and allocate memory to it.
+
+Create a G\+SL matrix.
+
+Assign sample values to matrix.
+
+Call the G\+SL transpose function.
+
+Assign the G\+SL transpose matrix to the created matrix.
+
+Return the transpose.

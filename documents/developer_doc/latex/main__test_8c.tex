@@ -1,0 +1,85 @@
+\hypertarget{main__test_8c}{}\doxysection{C\+:/\+Users/mitesh/\+Desktop/\+C\+\_\+\+A\+D\+V\+\_\+\+T\+P\+O\+\_\+\+I\+N\+\_\+\+S\+O\+F\+T/\+Sensor\+Fusion\+Algorithm/\+Sensor\+Fusion\+\_\+src/main\+\_\+test.c File Reference}
+\label{main__test_8c}\index{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/SensorFusionAlgorithm/SensorFusion\_src/main\_test.c@{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/SensorFusionAlgorithm/SensorFusion\_src/main\_test.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/support\+\_\+degree\+\_\+matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/contribution.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/integrated\+\_\+support.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/elimination.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/weight\+\_\+coefficient.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/fused\+\_\+output.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main__test_8c_af1523f7410d70890c36eac4afacb94ad}{S\+D\+M\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}}~2
+\begin{DoxyCompactList}\small\item\em This function provides basic unit testing. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main__test_8c_a5440ac1905eecbcb4f27f7d3b24866ce}{C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}}~3
+\item 
+\#define \mbox{\hyperlink{main__test_8c_a153f159fb822bf449cd2172f853205e5}{I\+N\+T\+E\+G\+R\+A\+T\+E\+D\+\_\+\+S\+U\+P\+P\+O\+R\+T\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}}~2
+\item 
+\#define \mbox{\hyperlink{main__test_8c_ab980880aa3c3b4796904892947faa82b}{E\+L\+I\+M\+I\+N\+A\+T\+I\+O\+N\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}}~4
+\item 
+\#define \mbox{\hyperlink{main__test_8c_a85169469def8cad8c1731b3a285fdf2d}{W\+E\+I\+G\+H\+T\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}}~4
+\item 
+\#define \mbox{\hyperlink{main__test_8c_ac83ff27c3e0e8f24de74ccd004ee5b5e}{F\+U\+S\+E\+D\+\_\+\+O\+P\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE}}~4
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main__test_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main__test_8c_a5440ac1905eecbcb4f27f7d3b24866ce}\label{main__test_8c_a5440ac1905eecbcb4f27f7d3b24866ce}} 
+\index{main\_test.c@{main\_test.c}!CONTRIBUTION\_TEST\_ARRAY\_SIZE@{CONTRIBUTION\_TEST\_ARRAY\_SIZE}}
+\index{CONTRIBUTION\_TEST\_ARRAY\_SIZE@{CONTRIBUTION\_TEST\_ARRAY\_SIZE}!main\_test.c@{main\_test.c}}
+\doxysubsubsection{\texorpdfstring{CONTRIBUTION\_TEST\_ARRAY\_SIZE}{CONTRIBUTION\_TEST\_ARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE~3}
+
+\mbox{\Hypertarget{main__test_8c_ab980880aa3c3b4796904892947faa82b}\label{main__test_8c_ab980880aa3c3b4796904892947faa82b}} 
+\index{main\_test.c@{main\_test.c}!ELIMINATION\_TEST\_ARRAY\_SIZE@{ELIMINATION\_TEST\_ARRAY\_SIZE}}
+\index{ELIMINATION\_TEST\_ARRAY\_SIZE@{ELIMINATION\_TEST\_ARRAY\_SIZE}!main\_test.c@{main\_test.c}}
+\doxysubsubsection{\texorpdfstring{ELIMINATION\_TEST\_ARRAY\_SIZE}{ELIMINATION\_TEST\_ARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define E\+L\+I\+M\+I\+N\+A\+T\+I\+O\+N\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE~4}
+
+\mbox{\Hypertarget{main__test_8c_ac83ff27c3e0e8f24de74ccd004ee5b5e}\label{main__test_8c_ac83ff27c3e0e8f24de74ccd004ee5b5e}} 
+\index{main\_test.c@{main\_test.c}!FUSED\_OP\_TEST\_ARRAY\_SIZE@{FUSED\_OP\_TEST\_ARRAY\_SIZE}}
+\index{FUSED\_OP\_TEST\_ARRAY\_SIZE@{FUSED\_OP\_TEST\_ARRAY\_SIZE}!main\_test.c@{main\_test.c}}
+\doxysubsubsection{\texorpdfstring{FUSED\_OP\_TEST\_ARRAY\_SIZE}{FUSED\_OP\_TEST\_ARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define F\+U\+S\+E\+D\+\_\+\+O\+P\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE~4}
+
+\mbox{\Hypertarget{main__test_8c_a153f159fb822bf449cd2172f853205e5}\label{main__test_8c_a153f159fb822bf449cd2172f853205e5}} 
+\index{main\_test.c@{main\_test.c}!INTEGRATED\_SUPPORT\_TEST\_ARRAY\_SIZE@{INTEGRATED\_SUPPORT\_TEST\_ARRAY\_SIZE}}
+\index{INTEGRATED\_SUPPORT\_TEST\_ARRAY\_SIZE@{INTEGRATED\_SUPPORT\_TEST\_ARRAY\_SIZE}!main\_test.c@{main\_test.c}}
+\doxysubsubsection{\texorpdfstring{INTEGRATED\_SUPPORT\_TEST\_ARRAY\_SIZE}{INTEGRATED\_SUPPORT\_TEST\_ARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define I\+N\+T\+E\+G\+R\+A\+T\+E\+D\+\_\+\+S\+U\+P\+P\+O\+R\+T\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE~2}
+
+\mbox{\Hypertarget{main__test_8c_af1523f7410d70890c36eac4afacb94ad}\label{main__test_8c_af1523f7410d70890c36eac4afacb94ad}} 
+\index{main\_test.c@{main\_test.c}!SDM\_TEST\_ARRAY\_SIZE@{SDM\_TEST\_ARRAY\_SIZE}}
+\index{SDM\_TEST\_ARRAY\_SIZE@{SDM\_TEST\_ARRAY\_SIZE}!main\_test.c@{main\_test.c}}
+\doxysubsubsection{\texorpdfstring{SDM\_TEST\_ARRAY\_SIZE}{SDM\_TEST\_ARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define S\+D\+M\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE~2}
+
+
+
+This function provides basic unit testing. 
+
+\begin{DoxyAuthor}{Author}
+Shyam Bhuptani 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{main__test_8c_a85169469def8cad8c1731b3a285fdf2d}\label{main__test_8c_a85169469def8cad8c1731b3a285fdf2d}} 
+\index{main\_test.c@{main\_test.c}!WEIGHT\_TEST\_ARRAY\_SIZE@{WEIGHT\_TEST\_ARRAY\_SIZE}}
+\index{WEIGHT\_TEST\_ARRAY\_SIZE@{WEIGHT\_TEST\_ARRAY\_SIZE}!main\_test.c@{main\_test.c}}
+\doxysubsubsection{\texorpdfstring{WEIGHT\_TEST\_ARRAY\_SIZE}{WEIGHT\_TEST\_ARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define W\+E\+I\+G\+H\+T\+\_\+\+T\+E\+S\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE~4}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main__test_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main__test_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main\_test.c@{main\_test.c}!main@{main}}
+\index{main@{main}!main\_test.c@{main\_test.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+

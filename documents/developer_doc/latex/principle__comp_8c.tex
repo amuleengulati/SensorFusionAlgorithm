@@ -1,0 +1,63 @@
+\hypertarget{principle__comp_8c}{}\doxysection{C\+:/\+Users/mitesh/\+Desktop/\+C\+\_\+\+A\+D\+V\+\_\+\+T\+P\+O\+\_\+\+I\+N\+\_\+\+S\+O\+F\+T/\+Project/\+Sensor\+Fusion\+Algorithm/src/principle\+\_\+comp.c File Reference}
+\label{principle__comp_8c}\index{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/principle\_comp.c@{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/principle\_comp.c}}
+
+
+Computes the principle component values for the input eigen values and eigen vectors.  
+
+
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}principle\+\_\+comp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}transpose.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}multiply.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \mbox{\hyperlink{principle__comp_8c_ade62559904bb89b865b21ae331f55044}{principle\+\_\+component}} (int n, double $\ast$$\ast$D, double $\ast$T)
+\begin{DoxyCompactList}\small\item\em This function computes the principal component values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the principle component values for the input eigen values and eigen vectors. 
+
+\begin{DoxyAuthor}{Author}
+Amuleen Gulati 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+7 Dec 2019 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{principle__comp_8c_ade62559904bb89b865b21ae331f55044}\label{principle__comp_8c_ade62559904bb89b865b21ae331f55044}} 
+\index{principle\_comp.c@{principle\_comp.c}!principle\_component@{principle\_component}}
+\index{principle\_component@{principle\_component}!principle\_comp.c@{principle\_comp.c}}
+\doxysubsubsection{\texorpdfstring{principle\_component()}{principle\_component()}}
+{\footnotesize\ttfamily double $\ast$ principle\+\_\+component (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{double $\ast$$\ast$}]{D,  }\item[{double $\ast$}]{T }\end{DoxyParamCaption})}
+
+
+
+This function computes the principal component values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & Integer value indicating size of the input matrix. \\
+\hline
+\mbox{\texttt{ in}}  & {\em D} & vector containing the eigen values of the S\+DM matrix. \\
+\hline
+\mbox{\texttt{ in}}  & {\em T} & 2-\/D array containing the eigen vector values of the S\+DM matrix. \\
+\hline
+\end{DoxyParams}
+Create a vector to store principal component values.
+
+Create a vector to store individual eigen vectors.
+
+Create a matrix to store the values.
+
+Create a G\+SL matrix.
+
+Assign sample values to G\+SL matrix and fill the matrix.
+
+Call transpose function.
+
+Modify G\+SL matrix to contain transposed values.
+
+Create vertical splits of matrix to access individual eigen vectors.

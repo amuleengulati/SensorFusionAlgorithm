@@ -1,0 +1,52 @@
+\hypertarget{integrated__support_8c}{}\doxysection{C\+:/\+Users/mitesh/\+Desktop/\+C\+\_\+\+A\+D\+V\+\_\+\+T\+P\+O\+\_\+\+I\+N\+\_\+\+S\+O\+F\+T/\+Project/\+Sensor\+Fusion\+Algorithm/src/integrated\+\_\+support.c File Reference}
+\label{integrated__support_8c}\index{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/integrated\_support.c@{C:/Users/mitesh/Desktop/C\_ADV\_TPO\_IN\_SOFT/Project/SensorFusionAlgorithm/src/integrated\_support.c}}
+
+
+Computes support degree score for all the m sensors.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/integrated\+\_\+support.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \mbox{\hyperlink{integrated__support_8c_a19e49d68ce59dddd6cb38f874278a186}{compute\+\_\+integrated\+\_\+support}} (double alpha\mbox{[}$\,$\mbox{]}, double principal\+\_\+components\mbox{[}$\,$\mbox{]}, int n)
+\begin{DoxyCompactList}\small\item\em This function provides the support degree score for all the m sensors, though total number of sensors provided as input shall be as same as n, as we are making alpha 0 for psi $>$ 85\% in previous stage. Support degree score is calculated using the contribution rate and the principal components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes support degree score for all the m sensors. 
+
+\begin{DoxyAuthor}{Author}
+Shyam Bhuptani 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{integrated__support_8c_a19e49d68ce59dddd6cb38f874278a186}\label{integrated__support_8c_a19e49d68ce59dddd6cb38f874278a186}} 
+\index{integrated\_support.c@{integrated\_support.c}!compute\_integrated\_support@{compute\_integrated\_support}}
+\index{compute\_integrated\_support@{compute\_integrated\_support}!integrated\_support.c@{integrated\_support.c}}
+\doxysubsubsection{\texorpdfstring{compute\_integrated\_support()}{compute\_integrated\_support()}}
+{\footnotesize\ttfamily compute\+\_\+integrated\+\_\+support (\begin{DoxyParamCaption}\item[{double}]{alpha\mbox{[}$\,$\mbox{]},  }\item[{double}]{principal\+\_\+components\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+This function provides the support degree score for all the m sensors, though total number of sensors provided as input shall be as same as n, as we are making alpha 0 for psi $>$ 85\% in previous stage. Support degree score is calculated using the contribution rate and the principal components. 
+
+\begin{DoxyAuthor}{Author}
+Shyam Bhuptani 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em size} & of contribution array m \\
+\hline
+\mbox{\texttt{ in}}  & {\em concontribution} & array(alpha) \\
+\hline
+\mbox{\texttt{ in}}  & {\em principal} & components(size n) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integrated support for all m sensors in terms of 1-\/D matrix 
+\end{DoxyReturn}
