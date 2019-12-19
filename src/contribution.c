@@ -42,6 +42,9 @@ double* contribution(int n, double* D){
     }
     double* psi_m;
     psi_m = (double*) malloc(n*sizeof(double));
+
+    /*! \brief Take contribution rate of first 85% principle components.
+     */
     for(int i = 0; i < n; i++){
         if(psi[i] < 0.85){
             psi_m[i] = 0;

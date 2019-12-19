@@ -259,9 +259,12 @@ int main(int argc, char* argv[]){
             double fused_sensor_output;
             fused_sensor_output = fused_output(input_array,w_coefficients,n);
 
-            /* Just for debugging */
+            /*! \brief Send output to output file.
+             */
             fprintf(output,"     %.2f                             %f\n",time, fused_sensor_output);
 
+            /*! \brief Compute out-of-range sensors and send to output file.
+             */
             int input_sum = 0.0;
             int count = 0;
             for(int i = 0; i < n; i++){
@@ -287,5 +290,18 @@ int main(int argc, char* argv[]){
      */
     fclose(input_file);
     fclose(output);
+   
+    /*! \brief Free memory space.
+     */
+    free(sensor_description);
+    free(sd_matrix);
+    free(T);
+    free(D);
+    free(prin_comp);
+    free(contribution_m);
+    free(contribution_alpha);
+    free(integrated_support_degree);
+    free(eliminated);
+    free(w_coefficients);
     return 0;
 }
