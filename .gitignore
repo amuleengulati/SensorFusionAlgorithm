@@ -1,0 +1,5 @@
+*.o
+*.exe
+*.exe.stackdump
+bin/
+build/
