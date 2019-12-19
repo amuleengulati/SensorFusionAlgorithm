@@ -206,7 +206,7 @@ int main(int argc, char* argv[]){
             for(int r = 0; r < n; r++){
                 sd_matrix[r] = (double*) malloc(n*sizeof(double));
             }
-            sd_matrix = support_degree_matrix(n,input_array);
+            sd_matrix = build_support_degree_matrix(input_array,n);
 
             /* Declare a 2-D matrix to store eigen vectors. */
             double** T;

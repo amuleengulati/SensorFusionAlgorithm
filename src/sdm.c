@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "../include/support_degree_matrix.h"
+#include "../include/sdm.h"
 
 /*Function declaration which returns a 2D array */
 double ** build_support_degree_matrix(double sensor_readings[], int n){

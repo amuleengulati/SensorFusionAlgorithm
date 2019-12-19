@@ -54,7 +54,7 @@ int main(){
     for(int r = 0; r < 2; r++){
         input_array[r] = (double*) malloc(2*sizeof(double));
     }
-    input_array = support_degree_matrix(2, array);
+    input_array = build_support_degree_matrix(array,2);
     
     /***********************************************AUTOMATIC UNIT TESTING****************************************************/
     
@@ -232,7 +232,7 @@ int main(){
     printf("Expected array is [[1.000000 0.000045] [0.000045 1.000000]]\n");
     double sdm_test[2] = {10.00,20.00};
     double **support_degree_test;
-    support_degree_test = support_degree_matrix(SDM_TEST_ARRAY_SIZE,sdm_test);
+    support_degree_test = build_support_degree_matrix(sdm_test,SDM_TEST_ARRAY_SIZE);
     printf("OutPut 2-D array with below values\n");
     for(int i = 0; i < SDM_TEST_ARRAY_SIZE ; i ++){
         for(int j =0; j < SDM_TEST_ARRAY_SIZE ; j++){
