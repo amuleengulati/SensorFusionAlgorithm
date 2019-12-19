@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******************************************************
 * Author : Shyam Bhuptani 
 * Function : elimination
@@ -7,6 +8,19 @@
 * Input : integrated support array(n) , total number of sensors
 * Output : integrated support for all j sensors who passed the condition and rest are set to 0
 */
+=======
+/**
+ *
+ * \fn elimination_of_integrated_support(double integrated_support[], int n)
+ * \author Shyam Bhuptani
+ * \brief This function uses the support degree score for all the sensors to 
+ * determine the correctness using the standard formula where each sensors score should be
+ * greater than (average score * 0.7), otherwise it will be disregarded.
+ * @param[in] integrated support array(n)
+ * @param[in] total number of sensors
+ * @return integrated support for all j sensors who passed the condition and rest are set to 0
+ */
+>>>>>>> b02659bc402c93ac15c7ff8712f0198ba60bedb9
 
 /*Including dependancies*/
 #include <stdio.h>

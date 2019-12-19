@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******************************************************
 * Author : Shyam Bhuptani 
 * Function : Integrated Support 
@@ -8,6 +9,21 @@
 * Input : size of contribution array m, concontribution array(alpha) and principal components(size n) 
 * Output : integrated support for all m sensors in terms of 1-D matrix
 */
+=======
+/**
+ *
+ * \fn compute_integrated_support(double alpha[], double principal_components[],int n)
+ * \author Shyam Bhuptani
+ * \brief This function provides the support degree score for all the m sensors, though total
+ * number of sensors provided as input shall be as same as n, as we are making alpha 0 for psi > 85%
+ * in previous stage.
+ * Support degree score is calculated using the contribution rate and the principal components.
+ * @param[in] size of contribution array m
+ * @param[in] concontribution array(alpha)
+ * @param[in] principal components(size n) 
+ * @return integrated support for all m sensors in terms of 1-D matrix
+ */
+>>>>>>> b02659bc402c93ac15c7ff8712f0198ba60bedb9
 
 /*Including dependancies*/
 #include <stdio.h>
