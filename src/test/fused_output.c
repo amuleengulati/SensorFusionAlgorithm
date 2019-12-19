@@ -10,7 +10,7 @@
 /*Including dependancies*/
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/fused_output.h"
+#include "../../include/fused_output.h"
 
 
 double fused_output(double sensor_readings[], double weights[], int n){

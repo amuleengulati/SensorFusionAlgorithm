@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "../include/elimination.h"
+#include "../../include/elimination.h"
 
 
 double *elimination_of_integrated_support(double integrated_support[], int n){

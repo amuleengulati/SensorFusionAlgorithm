@@ -5,13 +5,13 @@
  * @brief Computes the product of two vectors
  */
 
-#include "..\include\multiply.h"
+#include "..\..\include\multiply.h"
 
 /**
  * \fn double multiply(double* eigen_vector, double* eigen_value)
  * @param[in] eigen_vector a single eigen vector of the input matrix.
  * @param[in] eigen_value a vector containing eigen values of the input matrix.
- * @param[in] n integer denoting size of vector.
+ * @param[in] n integer containing size of vectors. 
  * @brief This function computes the vector product.
  */
 

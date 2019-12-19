@@ -16,30 +16,39 @@
  */
 double* contribution(int n, double* D){
 
-/*! \brief Compute the sum of eigen_value vector.
- */
-double sum = 0.0;
-for(int i=0;i<n;i++){
-    sum += D[i];
-}
+    /*! \brief Compute the sum of eigen_value vector.
+     */
+    double sum = 0.0;
+    for(int i=0;i<n;i++){
+        sum += D[i];
+    }
 
-/*! \brief Compute the contribution rate of kth principal 
- *         component
- */
-double* alpha;
-alpha = (double*) malloc(n*sizeof(double));
-for(int k=0;k<n;k++){
-    alpha[k] = D[k]/sum;
-}
+    /*! \brief Compute the contribution rate of kth principal 
+     *         component
+     */
+    double* alpha;
+    alpha = (double*) malloc(n*sizeof(double));
+    for(int k=0;k<n;k++){
+        alpha[k] = D[k]/sum;
+    }
 
-/*! \brief Compute the contribution rate of m principal components.
- */
-double* psi;
-psi = (double*) malloc(n*sizeof(double));
-psi[0] = alpha[0];
-int first_m = 0.85 * n;
-for(int m = 1; m < first_m; m++){
-    psi[m] = psi[m-1] + alpha[m];
-}
-return psi;
+    /*! \brief Compute the contribution rate of m principal components.
+     */
+    double* psi;
+    psi = (double*) malloc(n*sizeof(double));
+    psi[0] = alpha[0];
+    for(int m = 1; m < n; m++){
+        psi[m] = psi[m-1] + alpha[m];
+    }
+    double* psi_m;
+    psi_m = (double*) malloc(n*sizeof(double));
+    for(int i = 0; i < n; i++){
+        if(psi[i] < 0.85){
+            psi_m[i] = 0;
+        }
+        else{
+            psi_m[i] = psi[i];
+        }
+    }
+    return psi_m;
 }

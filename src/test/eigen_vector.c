@@ -6,7 +6,7 @@
  * n*n for the input sd_matrix[n][n] (the SDM matrix) .
  */
 
-#include "..\include\eigen.h"
+#include "..\..\include\eigen.h"
 
 /**
  * \fn double** eigen_vector(int n, double** D)

@@ -6,9 +6,9 @@
  *  eigen values and eigen vectors.
  */
 
-#include "..\include\principle_comp.h"
-#include "..\include\transpose.h"
-#include "..\include\multiply.h"
+#include "..\..\include\principle_comp.h"
+#include "..\..\include\transpose.h"
+#include "..\..\include\multiply.h"
 
 /**
  * \fn double* principle_component(int n, double** D, double* T)

@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "../include/integrated_support.h"
+#include "../../include/integrated_support.h"
 
 
 double *compute_integrated_support(double alpha[], double principal_components[],int n){

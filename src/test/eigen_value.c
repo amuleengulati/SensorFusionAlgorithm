@@ -6,7 +6,7 @@
  * an input matrix[n][n] (the SDM matrix)
  */
 
-#include "..\include\eigen.h"
+#include "..\..\include\eigen.h"
 
 /**
  * \fn double* eigen_value(int n, double** D)

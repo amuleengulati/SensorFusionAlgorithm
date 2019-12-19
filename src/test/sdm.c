@@ -7,7 +7,7 @@
 * Output : N*N support degree matrix
 */
 
-#include "..\include\sdm.h"
+#include "..\..\include\sdm.h"
 
 /*Function declaration which returns a 2D array */
 double ** support_degree_matrix(int n, double temprature[n]){

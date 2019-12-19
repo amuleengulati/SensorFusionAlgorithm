@@ -27,6 +27,7 @@
 #define DELIMITER ","
 #define MAX_ENTRIES 100
 #define MAX_LINE_SIZE 128
+#define FAULT_TOLERANCE 0.7
 
 /* Declare a global variable to store the number of entries in an input file */
 int total_entries = 0;
@@ -186,14 +187,14 @@ int main(int argc, char* argv[]){
             int index = 0;
             for(int k = 1; k < total_entries; k++){
                 if(sensor_description_list[temp_array[0]].time == sensor_description_list[temp_array[k]].time){
-                    input_array[entry] = sensor_description_list[temp_array[k]].value;
                     entry = entry + 1;
+                    input_array[entry] = sensor_description_list[temp_array[k]].value;
                     delete(temp_array, k);
                     k = k - 1;
                 }
             }
 
-            input_array[entry] = sensor_description_list[temp_array[0]].value;
+            input_array[0] = sensor_description_list[temp_array[0]].value;
             float time = sensor_description_list[temp_array[0]].time;
             entry = entry + 1;
             delete(temp_array, 0);
@@ -260,6 +261,24 @@ int main(int argc, char* argv[]){
 
             /* Just for debugging */
             fprintf(output,"     %.2f                             %f\n",time, fused_sensor_output);
+
+            int input_sum = 0.0;
+            int count = 0;
+            for(int i = 0; i < n; i++){
+                input_sum += input_array[i];
+            }
+            fprintf(output,"\n \n LIST OF SENSORS OUT OF PRESCRIBED RANGE: ");
+         
+            float input_avg = input_sum/n;
+            for(int i = 0; i < n; i++){
+                if(input_array[i] < FAULT_TOLERANCE*input_avg){
+                     fprintf(output, "%s \n\n", &sensor_description_list[i].name);
+                     count++;
+                }        
+            }
+            if(count == 0){
+                fprintf(output, " NONE\n");
+            }
         }
     }
     

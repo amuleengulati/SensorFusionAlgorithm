@@ -5,7 +5,7 @@
  * @brief Computes the transpose of the input matrix
  */
 
-#include "..\include\transpose.h"
+#include "..\..\include\transpose.h"
 
 /**
  * \fn double** transpose(double** matrix, int n)

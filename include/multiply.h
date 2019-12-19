@@ -3,6 +3,6 @@
 
 #include "..\lib\gsl\matrix\gsl_matrix.h"
 
-double multiply(double*,double*);
+double multiply(double*,double*,int);
 
 #endif

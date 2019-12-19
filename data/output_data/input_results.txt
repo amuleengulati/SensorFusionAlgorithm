@@ -1,5 +1,12 @@
 -----------------------------------------------------------------
 |      TIME                      |           FUSED_SENSOR_VALUE |
 -----------------------------------------------------------------
-     13.20                             5.939755
-     13.50                             30.500000
+     13.20                             16.541097
+
+ 
+ LIST OF SENSORS OUT OF PRESCRIBED RANGE: sens1 
+
+     13.50                             30.000000
+
+ 
+ LIST OF SENSORS OUT OF PRESCRIBED RANGE:  NONE

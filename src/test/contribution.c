@@ -1,21 +1,20 @@
 /** 
- * @file contribution_k.c
+ * @file contribution.c
  * @author Amuleen Gulati
- * @date 16 Dec 2019
- * @brief Computes contribution rate of first k principal  
- * components.
+ * @date 1 Dec 2019
+ * @brief Computes contribution rate of first m principal  * components.
  */
 
-#include "..\include\contribution.h"
+#include "..\..\include\contribution.h"
 
 /**
- * \fn double* contribution_k(int n, double* D)
+ * \fn double* contribution(int n, double* D)
  * @param[in] n Integer value indicating size of the input matrix.
  * @param[in] D vector containing the eigen values of the SDM matrix.
  * @return psi 1Xn vector containing contribution rates of m principal components. 
  * @brief This function computes the contribution values.
  */
-double* contribution_k(int n, double* D){
+double* contribution(int n, double* D){
 
     /*! \brief Compute the sum of eigen_value vector.
      */
@@ -32,5 +31,15 @@ double* contribution_k(int n, double* D){
     for(int k=0;k<n;k++){
         alpha[k] = D[k]/sum;
     }
-    return alpha;
+
+    /*! \brief Compute the contribution rate of m principal components.
+     */
+    double* psi;
+    psi = (double*) malloc(n*sizeof(double));
+    psi[0] = alpha[0];
+    //int first_m = 0.85 * n;
+    for(int m = 1; m < n; m++){
+        psi[m] = psi[m-1] + alpha[m];
+    }
+    return psi;
 }

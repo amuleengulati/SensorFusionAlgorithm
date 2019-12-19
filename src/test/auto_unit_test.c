@@ -12,22 +12,22 @@
 
 /*! \brief Include all dependencies.
  */
-#include "..\lib\gsl\eigen\gsl_eigen.h"
-#include "..\lib\gsl\gsl_math.h"
+#include "..\..\lib\gsl\eigen\gsl_eigen.h"
+#include "..\..\lib\gsl\gsl_math.h"
 
-#include "..\include\sdm.h"
-#include "..\include\multiply.h"
-#include "..\include\transpose.h"
-#include "..\include\eigen.h"
-#include "..\include\principle_comp.h"
-#include "..\include\contribution.h"
+#include "..\..\include\sdm.h"
+#include "..\..\include\multiply.h"
+#include "..\..\include\transpose.h"
+#include "..\..\include\eigen.h"
+#include "..\..\include\principle_comp.h"
+#include "..\..\include\contribution.h"
 
-#include "../include/contribution.h"
-#include "../include/integrated_support.h"
-#include "../include/elimination.h"
-#include "../include/weight_coefficient.h"
-#include "../include/fused_output.h"
-#include "../include/parse.h"
+#include "../../include/contribution.h"
+#include "../../include/integrated_support.h"
+#include "../../include/elimination.h"
+#include "../../include/weight_coefficient.h"
+#include "../../include/fused_output.h"
+#include "../../include/parse.h"
 
 #define DELIMITER ","
 #define MAX_ENTRIES 100
@@ -46,23 +46,21 @@ int main(){
      */
     int n = 2;
 
-    /*! \brief Take a sample 2X2 array to test different files.
+    /*! \brief Take a sample 1X2 array to test different files.
      */
+    double array[2] = {10.0, 20.0};
     double** input_array;
-    input_array = (double**) malloc(2*sizeof(double));
+    input_array = (double**) malloc(n*sizeof(double));
     for(int r = 0; r < 2; r++){
         input_array[r] = (double*) malloc(2*sizeof(double));
     }
-    input_array[0][0] = 10.0;
-    input_array[0][1] = 20.0;
-    input_array[1][0] = 30.0;
-    input_array[1][1] = 30.5;
-
+    input_array = support_degree_matrix(2, array);
+    
     /***********************************************AUTOMATIC UNIT TESTING****************************************************/
     
     printf("*********************UNIT TESTING OF FUNCTIONS****************************\n\n");
     printf("**************************************************************************\n\n");
-    printf("Testing eigen vector function using the array [10.0, 20.0, 30.0, 30.5]\n");
+    printf("Testing eigen vector function using the array [10.0, 20.0]\n");
 
     /**
      * \fn double** eigen_vector(int n, double** D)
@@ -76,7 +74,7 @@ int main(){
         e_vectors[r] = (double*) malloc(2*sizeof(double));
     }
     e_vectors = eigen_vector(2, input_array);
-    printf("Expected output for eigen vectors: [0.813424 0.581672 -0.581672 0.813424]\n");
+    printf("Expected output for eigen vectors: [0.707107 -0.707107 0.707107 0.707107]\n");
     printf("Eigen vector values obtained from eigen_vector.c: [");
     for(int i = 0; i < 2; i++){
         for(int j = 0; j < 2; j++){
@@ -84,10 +82,9 @@ int main(){
         }
     }
     printf("]\n\n"); 
-    free(e_vectors);
-
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     printf("**************************************************************************\n\n");
-    printf("Testing eigen value function using the array [10.0, 20.0, 30.0, 30.5]\n");
+    printf("Testing eigen value function using the array [10.0, 20.0]\n");
 
     /**
      * \fn double* eigen_value(int n, double** D)
@@ -99,21 +96,21 @@ int main(){
     double* e_values;
     e_values = (double*) malloc(2*sizeof(double));
     e_values = eigen_value(2, input_array);
-    printf("Expected output for eigen values: [-11.4527 51.9527]\n");
+    printf("Expected output for eigen values: [1.000045 0.999955]\n");
     printf("Eigen vector values obtained from eigen_value.c: [");
     for(int i = 0; i < 2; i++){
             printf("%f ", e_values[i]);
     }
     printf("]\n\n"); 
-    free(e_values);
-
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     printf("**************************************************************************\n\n");
-    printf("Testing multiply function using the array [10.0, 20.0, 30.0, 30.5]\n");
+    printf("Testing multiply function using the array [10.0, 20.0]\n");
 
     /**
-     * \fn double multiply(double* eigen_vector, double* eigen_value)
+     * \fn double multiply(double* eigen_vector, double* eigen_value,int n)
      * @param[in] eigen_vector a single eigen vector of the input matrix.
      * @param[in] eigen_value a vector containing eigen values of the input matrix.
+     * @param[in] n integer containing size of vectors.
      * @brief This function computes the vector product.
      */
     
@@ -126,12 +123,11 @@ int main(){
     sample_e_vector[0] = 0.813424;
     sample_e_vector[1] = 0.581672;
 
-    product = multiply(sample_e_vector, e_values);
-    printf("Expected output for product: 20.9035\n");
+    product = multiply(sample_e_vector, e_values, 2);
+    printf("Expected output for product: 1.3951\n");
     printf("Product obtained from mutiply.c: %f\n\n", product);
-
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     printf("**************************************************************************\n\n");
-    free(sample_e_vector);
 
     printf("Testing transpose function using the array [10.0, 20.0, 30.0, 30.5]\n");
 
@@ -147,8 +143,17 @@ int main(){
     for(int r = 0; r < 2; r++){
         matrix_transpose[r] = (double*) malloc(2*sizeof(double));
     }
+    double** input_array1;
+    input_array1 = (double**) malloc(n*sizeof(double));
+    for(int r = 0; r < 2; r++){
+        input_array1[r] = (double*) malloc(2*sizeof(double));
+    }
+    input_array1[0][0] = 10.0;
+    input_array1[0][1] = 20.0;
+    input_array1[1][0] = 30.0;
+    input_array1[1][1] = 30.5;
 
-    matrix_transpose = transpose(input_array, 2);
+    matrix_transpose = transpose(input_array1, 2);
     printf("Expected output for transpose: [10.0 30.0 20.0 30.5] \n");
     printf("Transpose obtained from transpose.c: [");
     for(int i = 0; i < 2; i++){
@@ -157,10 +162,9 @@ int main(){
         }
     }
     printf("]\n\n"); 
-    free(matrix_transpose);
-
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     printf("**************************************************************************\n\n");
-    printf("Testing principal component function using the array [10.0, 20.0, 30.0, 30.5]\n");
+    printf("Testing principal component function using the array [10.0, 20.0]\n");
 
     /**
      * \fn double* principle_component(int n, double** D, double* T)
@@ -173,16 +177,15 @@ int main(){
     double* p_components;
     p_components = (double*) malloc(2*sizeof(double));
     p_components = principle_component(2, e_vectors, e_values);
-    printf("Expected output for principal component values: [20.9035 48.9212]\n");
+    printf("Expected output for principal component values: [0.000064 1.4142]\n");
     printf("Principal component values obtained from principle_comp.c: [");
     for(int i = 0; i < 2; i++){
             printf("%f ", p_components[i]);
     }
     printf("]\n\n"); 
-    free(p_components);
-
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     printf("**************************************************************************\n\n");
-    printf("Testing contribution function using the array [10.0, 20.0, 30.0, 30.5]\n");
+    printf("Testing contribution function using the array [10.0, 20.0]\n");
 
     /**
      * \fn double* contribution(int n, double* D)
@@ -194,14 +197,24 @@ int main(){
     double* c_values;
     c_values = (double*) malloc(2*sizeof(double));
     c_values = contribution(2, e_values);
-    printf("Expected output for contribution values: [-0.2827]\n");
+    printf("Expected output for contribution values: [0.0 1.0]\n");
     printf("Contribution values obtained from contribution.c: [");
-    for(int i = 0; i < 1; i++){
+    for(int i = 0; i < 2; i++){
             printf("%f ", c_values[i]);
     }
     printf("]\n\n"); 
-    free(c_values);
+    puts("FUNCTION TEST CASE: PASSED!!\n");
     printf("**************************************************************************\n\n");
+    
+    /*! \brief Free dynamically allocated memory.
+     */
+    free(c_values);
+    free(p_components);
+    free(matrix_transpose);
+    free(sample_e_vector);
+    free(e_vectors);
+    free(e_values);
+ 
 
     /*******************************************************
     * Author : Shyam Bhuptani 

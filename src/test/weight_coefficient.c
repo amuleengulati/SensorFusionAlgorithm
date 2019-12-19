@@ -10,7 +10,7 @@
 /*Including dependancies*/
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/weight_coefficient.h"
+#include "../../include/weight_coefficient.h"
 
 
 double *find_weight_coefficient(double elimination_matrix[], int n){
